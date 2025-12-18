@@ -1,0 +1,2 @@
+# BluewaveMedia
+Exercício fictício.
