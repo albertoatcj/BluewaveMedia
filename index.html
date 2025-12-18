@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BlueWave Media – Formulário de Contato</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <main class="card" role="main">
+      <header class="header">
+        <div class="brand">BlueWave Media</div>
+        <h1>Entre em contato com a nossa equipe</h1>
+        <p class="sub">Preencha suas informações para iniciarmos uma conversa sobre sua necessidade de marketing.</p>
+      </header>
+
+      <form id="contactForm" class="form" novalidate>
+        <div class="field">
+          <label for="fullName">Nome completo</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Ex.: Maria Silva" required minlength="3" aria-describedby="err-fullName" />
+          <div id="err-fullName" class="error-text sr-only" aria-live="assertive"></div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="exemplo@empresa.com" required aria-describedby="err-email" />
+          <div id="err-email" class="error-text sr-only" aria-live="assertive"></div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Telefone</label>
+          <input type="tel" id="phone" name="phone" inputmode="tel" placeholder="(00) 00000-0000" pattern="^\(\d{2}\) \d{5}-\d{4}$" title="Formato esperado: (XX) XXXXX-XXXX" required aria-describedby="phoneHint err-phone" />
+          <small id="phoneHint" class="hint">Formato: (DD) 99999-9999</small>
+          <div id="err-phone" class="error-text sr-only" aria-live="assertive"></div>
+        </div>
+
+        <div class="field">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" placeholder="Conte brevemente como podemos ajudar" required minlength="10" maxlength="400" aria-describedby="messageCounter err-message"></textarea>
+          <div id="messageCounter" class="counter" aria-live="polite">0/400</div>
+          <div id="err-message" class="error-text sr-only" aria-live="assertive"></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn" aria-label="Enviar formulário">Enviar</button>
+        </div>
+
+        <div id="formFeedback" class="feedback" aria-live="polite"></div>
+      </form>
+    </main>
+  </div>
+
+  <footer>
+    <div class="divider" aria-hidden="true"></div>
+    <div>BlueWave Media – 2025</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+    Obrigado! ✅ Sua mensagem foi enviada. A BlueWave Media responderá em até 1 dia útil.
+  </div>
+
+  <div id="overlay" class="overlay" hidden>
+    <div class="loader" aria-hidden="true"></div>
+    <div class="overlay-text">Enviando… Aguarde um instante</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
